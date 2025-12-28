@@ -44,7 +44,7 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## Supabase Auth Setup 🔧
+## Supabase Auth Setup 🔧[for your personal uses!! For tailsmate ive already added a database so do not commit yor auth keys!!!!!!!!!!!!!!!!!!!!!!!!!!!!!]
 
 1. Create a project at https://app.supabase.com and copy the **Project URL** and **Anon (public) API Key**.
 2. Add them to `.env.local` at the project root:

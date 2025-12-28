@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+/* TailsMate Design System - Warm, Premium Pet Health-Tech Aesthetic */
+
+@layer base {
+  :root {
+    /* Core Browns from Palette */
+    --brown-deep: 25 78% 31%;       /* #8B4411 - Primary accent */
+    --brown-medium: 22 40% 49%;     /* #AE6E4E - Secondary */
+    --brown-light: 30 50% 60%;      /* #CC9767 - Tan */
+    --cream: 60 52% 91%;            /* #F5F5DD - Background */
+    --beige: 38 37% 64%;            /* #C7AD7F - Subtle accents */
+    --brown-warm: 24 30% 50%;       /* #A57A5A - Warm tones */
+    
+    /* Peach/Orange for CTAs */
+    --peach: 25 85% 65%;            /* Soft peach for buttons */
+    --peach-light: 28 90% 75%;      /* Lighter peach */
+    --peach-dark: 22 70% 50%;       /* Darker peach for hover */
+    
+    /* Semantic Design Tokens */
+    --background: 45 40% 97%;
+    --foreground: 25 30% 15%;
+
+    --card: 45 35% 96%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 45 35% 98%;
+    --popover-foreground: 25 30% 15%;
+
+    --primary: var(--peach);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--cream);
+    --secondary-foreground: 25 30% 25%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: var(--brown-light);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 25% 85%;
+    --input: 35 25% 88%;
+    --ring: var(--brown-medium);
+
+    --radius: 1rem;
+
+    /* Custom Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(25 30% 30% / 0.15);
+    --shadow-medium: 0 8px 30px -6px hsl(25 30% 30% / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--peach) / 0.3);
+    
+    /* Sidebar tokens */
+    --sidebar-background: 45 35% 96%;
+    --sidebar-foreground: 25 30% 25%;
+    --sidebar-primary: var(--brown-deep);
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 40 30% 92%;
+    --sidebar-accent-foreground: 25 30% 20%;
+    --sidebar-border: 35 25% 85%;
+    --sidebar-ring: var(--brown-medium);
+  }
+
+  .dark {
+    --background: 25 25% 8%;
+    --foreground: 40 30% 92%;
+
+    --card: 25 20% 12%;
+    --card-foreground: 40 30% 92%;
+
+    --popover: 25 20% 10%;
+    --popover-foreground: 40 30% 92%;
+
+    --primary: var(--peach);
+    --primary-foreground: 25 30% 10%;
+
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 40 25% 85%;
+
+    --muted: 25 15% 20%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: var(--brown-medium);
+    --accent-foreground: 0 0% 100%;
+
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: var(--peach);
+
+    --sidebar-background: 25 20% 10%;
+    --sidebar-foreground: 40 25% 90%;
+    --sidebar-primary: var(--peach);
+    --sidebar-primary-foreground: 25 30% 10%;
+    --sidebar-accent: 25 15% 18%;
+    --sidebar-accent-foreground: 40 25% 90%;
+    --sidebar-border: 25 15% 22%;
+    --sidebar-ring: var(--peach);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    @apply text-3xl font-semibold italic tracking-wide;
+  }
+
+  .btn-peach {
+    @apply bg-primary text-primary-foreground px-8 py-3 rounded-full font-medium 
+           transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-peach:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-peach-outline {
+    @apply border-2 border-primary text-primary px-8 py-3 rounded-full font-medium 
+           transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-premium {
+    @apply bg-card rounded-3xl p-8 transition-all duration-300 hover:scale-[1.02];
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-premium:hover {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .gradient-cream {
+    background: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--background)) 100%);
+  }
+
+  .gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--peach-light) / 0.3) 0%, hsl(var(--cream)) 50%, hsl(var(--beige) / 0.2) 100%);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-delay-1 {
+    animation: fadeIn 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 3s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}

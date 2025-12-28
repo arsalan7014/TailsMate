@@ -15,7 +15,7 @@ npm -vb.com/nvm-sh/nvm#installing-and-updating)
 
 Follow these steps:
 # Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone https://github.com/arsalan7014/TailsMate.git
 
 # Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
